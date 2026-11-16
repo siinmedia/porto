@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Briefcase, Code, MessageSquare } from "lucide-react";
-import { useState, type FormEvent } from "react";
-
-import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,14 +119,6 @@ function ClassicLink({ children, href = "#" }: { children: React.ReactNode; href
 }
 
 function Index() {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("Semua");
-  const [message, setMessage] = useState("");
-
-  function handleSearch(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setMessage(query.trim() ? `Mencari ${category} untuk "${query.trim()}"...` : "Mohon masukkan kata kunci pencarian.");
-  }
 
   return (
     <div className="discogs-page">
@@ -149,17 +138,7 @@ function Index() {
         ))}
       </nav>
 
-      <form className="classic-search" onSubmit={handleSearch}>
-        <label htmlFor="search-query">Cari:</label>
-        <select aria-label="Kategori pencarian" value={category} onChange={(event) => setCategory(event.target.value)}>
-          <option>Semua</option>
-          <option>Proyek</option>
-          <option>Keahlian</option>
-          <option>Pengalaman</option>
-        </select>
-        <input id="search-query" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="skill, teknologi, proyek..." />
-        <Button className="classic-search-button" type="submit">Cari</Button>
-      </form>
+
 
       <main className="classic-main">
         <aside className="classic-sidebar">
@@ -209,7 +188,7 @@ function Index() {
             </div>
           </div>
 
-          {message && <p className="search-feedback" role="status">{message}</p>}
+
 
           <section className="directory-section">
             <h2><Briefcase className="inline-block mr-1 size-3.5" />Pengalaman Kerja:</h2>
