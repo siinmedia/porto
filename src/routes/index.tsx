@@ -138,9 +138,6 @@ function Index() {
           Angger Aji Prayogo
         </a>
         <p className="discogs-tagline">Web Developer & Digital Marketing Specialist</p>
-        <div className="account-links">
-          <strong>Jepara, Indonesia</strong> | <ClassicLink href="mailto:kingangger16@gmail.com">Email</ClassicLink> | <ClassicLink href="https://linkedin.com/in/anggeraji">LinkedIn</ClassicLink>
-        </div>
       </header>
 
       <nav className="classic-nav" aria-label="Main navigation">
