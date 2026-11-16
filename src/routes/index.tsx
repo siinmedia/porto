@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageSquareText } from "lucide-react";
+import { Briefcase, Code, MessageSquare } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -7,15 +7,15 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Discogs — Electronic Music Database" },
+      { title: "Angger Aji Prayogo · Web Developer & Digital Marketing" },
       {
         name: "description",
-        content: "Browse electronic music labels, artists, releases, comments, and reviews.",
+        content: "CV Angger Aji Prayogo: Web Developer dan Digital Marketing Specialist, CRM, sistem internal, landing page, dan strategi konten media sosial.",
       },
-      { property: "og:title", content: "Discogs — Electronic Music Database" },
+      { property: "og:title", content: "Angger Aji Prayogo · Web Developer & Digital Marketing" },
       {
         property: "og:description",
-        content: "Browse electronic music labels, artists, releases, comments, and reviews.",
+        content: "CRM, sistem internal, landing page, dan strategi konten media sosial.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -24,32 +24,98 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const letters = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ", "#"];
-
-const additions = [
-  ["Talla 2XLC", "Love's Comin' Down Remixes", "Techno Club"],
-  ["D.A.4", "Funzone", "Techno Club"],
-  ["Jephte Guillaume And The Tet Kale Orkestra", "Voyage Of Dreams", "Spiritual Life Music"],
-  ["Bang Bang", "Je T'aime Je T'aime", "Yellow Productions"],
-  ["DJ Taucher", "Life Is A Remix Phase II", "Scuba Records"],
-  ["Wendy Carlos", "Sonic Seasonings+", "East Side"],
-  ["DJ Taucher", "Life Is A Remix Phase I", "Scuba Records"],
-  ["Roy Davis Jr", "Roy's Unreleased Traxx Vol 1", "Force Inc US"],
-  ["Cajmere", "Look' For A Man", "Not On Label"],
-  ["Laurent Garnier", "The Hoe", "F Communications"],
+const techStack = [
+  "PHP",
+  "HTML & CSS",
+  "JavaScript",
+  "Database Management",
+  "CRM",
+  "API Integration",
+  "Social Media Management",
+  "Content Strategy",
 ];
 
-const comments = [
-  ["Biosphere - Cirque", "IoaPetraka", "Cirque is a lot different from Substrata, in many ways. It, in my opinion, ..."],
-  ["Ladytron", "tower_restaurant", "This album is neither kitsch, camp, or casio. A collection of excellent an..."],
-  ["Medway", "radius", 'THE TRACK "RESURRECTION \'99" IS ALSO FEATURED ON THE "GLOBAL UNDERGROUND-SA...'],
-  ["Autechre - Peel Session", "IoaPetraka", 'When I first got in to the "IDM" sound, I was told to check out Autechre. S...'],
-  ["Andrew McLauchlan - Love Story", "djPimpDaddy", "Where do you find this record? I have been trying to find this on vinyl fo..."],
+const workExperience = [
+  {
+    period: "Des 2025 s.d. Sekarang",
+    role: "PHP Web Developer & SEO Specialist",
+    company: "CV Maha Niaga Artha",
+    jobDesc: "Bertanggung jawab mengembangkan dan memelihara sistem berbasis web untuk mendukung operasional perusahaan, membangun landing page dan website internal dengan optimasi SEO, serta melakukan integrasi antarplatform untuk meningkatkan efisiensi bisnis.",
+    highlights: [
+      "Membangun CRM Leads dari alur lead sampai handle customer, lengkap dengan data analisis, dalam 1 bulan.",
+      "Membangun sistem inventaris dalam 6 minggu: mengelola 376 item + sub item dan mendukung proses stock opname.",
+      "Membangun sistem perencanaan konten dalam 2 minggu dengan flow multi-role & multi-account serta data analisis lengkap.",
+      "Membangun HRIS KPI dalam 4 minggu: flow HR, absensi, dan payroll dengan notifikasi email + setup Meta WABA.",
+      "Mengembangkan 5+ landing page dan website internal perusahaan dengan optimasi SEO dan fokus konversi.",
+    ],
+  },
+  {
+    period: "Nov 2022 s.d. Des 2025",
+    role: "Social Media Marketing Specialist",
+    company: "CV Maha Niaga Artha",
+    jobDesc: "Mengelola strategi konten dan media sosial untuk 13 brand F&B, melakukan riset tren, menulis copywriting, menganalisis performa konten, serta menjalankan strategi organic growth untuk meningkatkan engagement dan brand awareness.",
+    highlights: [
+      "Menyusun strategi dan perencanaan konten untuk 13 brand F&B yang dikelola.",
+      "Mengelola kalender konten dengan rata-rata 60+ konten terjadwal per bulan lintas platform.",
+      "Melakukan riset tren media sosial 4+ kali per bulan untuk menjaga relevansi konten dengan audiens.",
+      "Menulis 60+ copywriting per bulan untuk caption, promosi, dan komunikasi digital brand.",
+      "Menjalankan organic growth yang mencapai 30.000 follower baru dalam satu bulan.",
+      "Mencapai peak view hingga 8 juta per bulan pada konten yang dikelola.",
+    ],
+  },
 ];
 
-function ClassicLink({ children }: { children: React.ReactNode }) {
+const projects = [
+  {
+    name: "CRM Leads Management",
+    desc: "Sistem manajemen leads dengan alur sampai handle customer.",
+    detail: "Alur lengkap dari lead masuk sampai handle customer, lengkap dengan data analisis untuk memantau performa leads.",
+    stack: "PHP · Database",
+  },
+  {
+    name: "Sistem Inventaris Internal",
+    desc: "Digitalisasi pencatatan dan pengelolaan 376 item inventaris.",
+    detail: "Dibangun dalam 6 minggu: mengelola 376 item + sub item dan mendukung proses stock opname perusahaan.",
+    stack: "PHP · Database",
+  },
+  {
+    name: "Sistem Perencanaan Konten",
+    desc: "Alat internal untuk kalender konten multi-role & multi-account.",
+    detail: "Dibangun dalam 2 minggu dengan flow multi-role dan multi-account serta data analisis lengkap untuk memantau performa konten.",
+    stack: "PHP · Workflow",
+  },
+  {
+    name: "TernoAE",
+    desc: "Platform ride-hailing lokal dengan sistem booking dan pelacakan real-time.",
+    detail: "Web app transportasi dengan alur booking yang simpel.",
+    stack: "PHP · Web App",
+  },
+  {
+    name: "QRIS Dynamic API",
+    desc: "REST API untuk generate QRIS dinamis dari kode statis.",
+    detail: "Endpoint POST JSON: kirim QRIS statis + nominal, terima QRIS dinamis siap scan. Digunakan untuk integrasi pembayaran, donasi, atau top-up pada sistem internal.",
+    stack: "REST API · JSON",
+  },
+  {
+    name: "Platform Analitik Konten",
+    desc: "Web SaaS analitik konten untuk memantau performa postingan.",
+    detail: "Dashboard analitik konten: views, engagement, like, komentar lintas platform. Memantau performa konten sebagai dasar strategi organik yang terukur.",
+    stack: "Web App · Analytics",
+  },
+];
+
+const achievements = [
+  { metric: "30K+ Follower", desc: "Follower baru dalam 1 bulan" },
+  { metric: "8 Juta Views", desc: "Peak views per bulan" },
+  { metric: "376 Item", desc: "Item inventaris dikelola" },
+  { metric: "60+ Konten", desc: "Konten terjadwal per bulan" },
+  { metric: "13 Brand F&B", desc: "Brand yang dikelola" },
+  { metric: "4+ Tahun", desc: "Pengalaman profesional" },
+];
+
+function ClassicLink({ children, href = "#" }: { children: React.ReactNode; href?: string }) {
   return (
-    <a className="classic-link" href="#">
+    <a className="classic-link" href={href}>
       {children}
     </a>
   );
@@ -57,28 +123,28 @@ function ClassicLink({ children }: { children: React.ReactNode }) {
 
 function Index() {
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState("Semua");
   const [message, setMessage] = useState("");
 
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage(query.trim() ? `Searching ${category} for “${query.trim()}”...` : "Please enter something to search.");
+    setMessage(query.trim() ? `Mencari ${category} untuk "${query.trim()}"...` : "Mohon masukkan kata kunci pencarian.");
   }
 
   return (
     <div className="discogs-page">
       <header className="discogs-header">
-        <a className="discogs-brand" href="/" aria-label="Discogs home">
-          Disc<span className="brand-record" aria-hidden="true" />gs
+        <a className="discogs-brand" href="/" aria-label="Angger Aji Prayogo">
+          Angger Aji Prayogo
         </a>
-        <p className="discogs-tagline">building the definitive electronic music database...</p>
+        <p className="discogs-tagline">Web Developer & Digital Marketing Specialist</p>
         <div className="account-links">
-          <strong>Guest</strong> | <ClassicLink>Register</ClassicLink> | <ClassicLink>Log In</ClassicLink>
+          <strong>Jepara, Indonesia</strong> | <ClassicLink href="mailto:kingangger16@gmail.com">Email</ClassicLink> | <ClassicLink href="https://linkedin.com/in/anggeraji">LinkedIn</ClassicLink>
         </div>
       </header>
 
       <nav className="classic-nav" aria-label="Main navigation">
-        {["About", "Help", "Stats", "My Discogs", "Forums", "Links"].map((item, index) => (
+        {["Tentang", "Pengalaman", "Proyek", "Keahlian", "Kontak", "Stats"].map((item, index) => (
           <span key={item}>
             {index > 0 && <span className="px-1 text-xs font-normal">|</span>}
             <ClassicLink>{item}</ClassicLink>
@@ -87,87 +153,122 @@ function Index() {
       </nav>
 
       <form className="classic-search" onSubmit={handleSearch}>
-        <label htmlFor="search-query">Search:</label>
-        <select aria-label="Search category" value={category} onChange={(event) => setCategory(event.target.value)}>
-          <option>All</option>
-          <option>Artists</option>
-          <option>Labels</option>
-          <option>Releases</option>
+        <label htmlFor="search-query">Cari:</label>
+        <select aria-label="Kategori pencarian" value={category} onChange={(event) => setCategory(event.target.value)}>
+          <option>Semua</option>
+          <option>Proyek</option>
+          <option>Keahlian</option>
+          <option>Pengalaman</option>
         </select>
-        <input id="search-query" value={query} onChange={(event) => setQuery(event.target.value)} />
-        <Button className="classic-search-button" type="submit">Go</Button>
+        <input id="search-query" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="skill, teknologi, proyek..." />
+        <Button className="classic-search-button" type="submit">Cari</Button>
       </form>
 
       <main className="classic-main">
         <aside className="classic-sidebar">
           <div className="col-span-full md:hidden">
-            <h1 className="text-sm font-bold">Welcome to Discogs</h1>
+            <h1 className="text-sm font-bold">Selamat Datang</h1>
           </div>
           <section className="sidebar-box">
-            <h2>How can I help?</h2>
-            <p>DJ's, record collectors, trainspotters, you can help Discogs grow by submitting missing <strong>labels</strong>, <strong>releases</strong>, and your <strong>music reviews</strong>. Discogs is 100% user-built. And you can be a part of it. <strong><ClassicLink>Join Now</ClassicLink></strong></p>
-            <p>If you have questions, comments, or need help using Discogs then please post a message in our <strong><ClassicLink>feedback forum</ClassicLink></strong>.</p>
+            <h2>Tentang Saya</h2>
+            <p>
+              <strong>Web Developer & Digital Marketing Specialist</strong> dengan pengalaman dalam pengembangan sistem berbasis web, CRM, sistem internal perusahaan, integrasi antarplatform, serta pengelolaan media sosial dan strategi konten.
+            </p>
+            <p>
+              Berpengalaman mengembangkan solusi digital untuk mendukung kebutuhan operasional dan bisnis perusahaan, sekaligus memiliki pengalaman dalam perencanaan konten, riset tren, copywriting, analisis performa, dan strategi pertumbuhan media sosial.
+            </p>
           </section>
           <section className="sidebar-box">
-            <h2>Statistics</h2>
-            <p>3,582 labels<br />18,200 releases<br />16,076 artists<br /><ClassicLink>763 contributors</ClassicLink></p>
-            <p><ClassicLink>Items Pending</ClassicLink></p>
-            <p>Updated:<br />Nov 28, 2001 10:39 AM</p>
+            <h2>Statistik</h2>
+            <p>
+              4+ Tahun Pengalaman<br />
+              6 Proyek Kerjaan<br />
+              14 Proyek Pribadi<br />
+              13 Brand F&B Dikelola
+            </p>
+            <p>
+              <ClassicLink>30K+ Follower/Bulan</ClassicLink><br />
+              <ClassicLink>8 Juta Peak Views</ClassicLink>
+            </p>
+            <p>
+              Updated:<br />
+              Nov 16, 2026 10:30 AM
+            </p>
           </section>
         </aside>
 
         <section className="classic-content">
           <div className="welcome-row">
             <div>
-              <h1 className="hidden text-sm font-bold md:block">Welcome to Discogs</h1>
-              <p>We're on a mission to build the biggest and most comprehensive electronic music database. Imagine a site with discographies of all labels, all artists, all cross-referenced. It's getting closer every day. <strong><em><ClassicLink>Learn more...</ClassicLink></em></strong></p>
+              <h1 className="hidden text-sm font-bold md:block">Selamat Datang</h1>
+              <p>
+                Developer yang memahami bisnis, marketing, dan kebutuhan pengguna. Profesional di bidang Web Development dan Digital Marketing dengan pengalaman dalam pengembangan sistem berbasis web, CRM, sistem internal perusahaan, integrasi antarplatform, serta pengelolaan media sosial dan strategi konten. <strong><em><ClassicLink>Lihat portofolio lengkap...</ClassicLink></em></strong>
+              </p>
             </div>
             <div className="share-box">
-              <MessageSquareText className="float-left mr-1 mt-0.5 size-4 text-primary" aria-hidden="true" />
-              <strong>Spread the Word!</strong>
-              <ClassicLink>Tell your friends about Discogs</ClassicLink>.
+              <MessageSquare className="float-left mr-1 mt-0.5 size-4 text-primary" aria-hidden="true" />
+              <strong>Mari Bekerja Sama!</strong>
+              <ClassicLink href="mailto:kingangger16@gmail.com">Hubungi untuk proyek Anda</ClassicLink>.
             </div>
           </div>
 
           {message && <p className="search-feedback" role="status">{message}</p>}
 
-          {["Browse Record Labels:", "Browse Artists:"].map((title) => (
-            <section className="directory-section" key={title}>
-              <h2>{title}</h2>
-              <div className="alphabet">
-                {letters.map((letter) => <a className="letter-link" href="#" key={`${title}-${letter}`}>{letter}</a>)}
-              </div>
-            </section>
-          ))}
-
-          <section className="list-section">
-            <h2>Latest Additions:</h2>
-            <ul className="classic-list">
-              {additions.map(([artist, release, label]) => (
-                <li key={`${artist}-${release}`}><ClassicLink>{artist}</ClassicLink> - "<ClassicLink>{release}</ClassicLink>" (<ClassicLink>{label}</ClassicLink>)</li>
+          <section className="directory-section">
+            <h2><Briefcase className="inline-block mr-1 size-3.5" />Pengalaman Kerja:</h2>
+            <div className="mt-2 space-y-4">
+              {workExperience.map((exp) => (
+                <div key={exp.role} className="mb-4">
+                  <div className="font-bold">{exp.period}</div>
+                  <div className="mb-1"><ClassicLink>{exp.role}</ClassicLink> - <ClassicLink>{exp.company}</ClassicLink></div>
+                  {exp.jobDesc && <p className="text-[11px] mb-1 italic">{exp.jobDesc}</p>}
+                  <ul className="classic-list ml-0 mt-1">
+                    {exp.highlights.slice(0, 3).map((highlight, i) => (
+                      <li key={i} className="text-[11px]">{highlight}</li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
-            <a className="classic-link more-link" href="#">more...</a>
+            </div>
+          </section>
+
+          <section className="directory-section">
+            <h2><Code className="inline-block mr-1 size-3.5" />Tech Stack:</h2>
+            <div className="alphabet">
+              {techStack.map((tech) => <span className="letter-link" key={tech}>{tech}</span>)}
+            </div>
           </section>
 
           <section className="list-section">
-            <h2>Latest Comments &amp; Reviews:</h2>
+            <h2>Proyek Terpilih:</h2>
             <ul className="classic-list">
-              {comments.map(([title, user, comment]) => (
-                <li key={title}>
-                  <ClassicLink>{title}</ClassicLink> - <ClassicLink>{user}</ClassicLink> - Nov 29, 2001
-                  <p className="mb-1 mt-0.5 text-[11px]">{comment}</p>
+              {projects.map((proj) => (
+                <li key={proj.name}>
+                  <ClassicLink>{proj.name}</ClassicLink> - {proj.desc}
+                  <p className="mb-1 mt-0.5 text-[11px]">{proj.detail}</p>
+                  <p className="mb-1 text-[10px] italic">Stack: {proj.stack}</p>
                 </li>
               ))}
             </ul>
-            <a className="classic-link more-link" href="#">more...</a>
+            <a className="classic-link more-link" href="#">lihat semua proyek...</a>
+          </section>
+
+          <section className="list-section">
+            <h2>Pencapaian & Impact:</h2>
+            <ul className="classic-list">
+              {achievements.map((item) => (
+                <li key={item.metric}>
+                  <strong>{item.metric}</strong> - {item.desc}
+                </li>
+              ))}
+            </ul>
           </section>
         </section>
       </main>
 
       <footer className="classic-footer">
-        <div><ClassicLink>About Discogs</ClassicLink> | <ClassicLink>Contact Us</ClassicLink> | <ClassicLink>Privacy Statement</ClassicLink></div>
-        <div>Copyright © 2001 Zink Media Inc. All Rights Reserved.</div>
+        <div><ClassicLink>Tentang</ClassicLink> | <ClassicLink href="mailto:kingangger16@gmail.com">Kontak</ClassicLink> | <ClassicLink href="https://linkedin.com/in/anggeraji">LinkedIn</ClassicLink> | <ClassicLink href="https://github.com/siinmedia">GitHub</ClassicLink></div>
+        <div>Angger Aji Prayogo © 2026 · Jepara, Indonesia</div>
       </footer>
     </div>
   );
