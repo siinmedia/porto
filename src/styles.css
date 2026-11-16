@@ -436,7 +436,7 @@
   }
 
   .discogs-brand {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .brand-record {
@@ -448,7 +448,8 @@
     order: 3;
     flex: 0 0 100%;
     margin: -5px 0 8px;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.3;
   }
 
   .account-links {
@@ -460,21 +461,28 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 2px;
-    font-size: 14px;
+    font-size: 13px;
     white-space: normal;
+    padding: 6px 5px;
   }
 
   .classic-search {
     flex-wrap: wrap;
+    gap: 8px;
   }
 
   .classic-search label {
-    font-size: 15px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .classic-search select {
+    width: 100px;
   }
 
   .classic-search input {
     flex: 1;
-    min-width: 100px;
+    min-width: 120px;
   }
 
   .classic-main {
@@ -485,24 +493,57 @@
 
   .classic-sidebar {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .sidebar-box {
     margin: 0;
   }
 
+  .sidebar-box p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
   .welcome-row {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .welcome-row p {
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .share-box {
     margin-top: 0;
-    width: fit-content;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .directory-section h2,
+  .list-section h2 {
+    font-size: 13px;
+  }
+
+  .classic-list {
+    font-size: 12px;
+    padding-left: 16px;
+  }
+
+  .classic-list li {
+    margin-bottom: 6px;
+  }
+
+  .classic-list p {
+    font-size: 11px;
   }
 
   .classic-footer {
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+    text-align: center;
   }
 }

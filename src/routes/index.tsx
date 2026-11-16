@@ -202,7 +202,7 @@ function Index() {
             <div>
               <h1 className="hidden text-sm font-bold md:block">Selamat Datang</h1>
               <p>
-                Developer yang memahami bisnis, marketing, dan kebutuhan pengguna. Profesional di bidang Web Development dan Digital Marketing dengan pengalaman dalam pengembangan sistem berbasis web, CRM, sistem internal perusahaan, integrasi antarplatform, serta pengelolaan media sosial dan strategi konten. <strong><em><ClassicLink>Lihat portofolio lengkap...</ClassicLink></em></strong>
+                Developer yang memahami bisnis, marketing, dan kebutuhan pengguna. Profesional di bidang Web Development dan Digital Marketing dengan pengalaman dalam pengembangan sistem berbasis web, CRM, sistem internal perusahaan, integrasi antarplatform, serta pengelolaan media sosial dan strategi konten.
               </p>
             </div>
             <div className="share-box">
